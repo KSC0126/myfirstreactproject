@@ -1,0 +1,23 @@
+parent A
+child 1
+child 2
+child 3 --> state {name: "hi"}
+
+
+Parent B
+child 1
+child 2
+child 3
+child 4 --> needs name
+
+
+
+redux:
+library store dat on client side
+state management
+data storing in redux make the data as global
+
+redux store --> single object
+
+
+view(component) -----> send data ---> action creators (return an object with 2 properties 1.type and 2.payload) ---> reducers --> all logics for basic CRUD will be done redux store here will be changed completely ---> VIEW(component)
