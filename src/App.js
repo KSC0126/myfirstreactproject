@@ -6,10 +6,10 @@ import Form from './form';
 import {Link} from 'react-router-dom';
 import sampleJson from './sample.json';
 import Task0313 from './task0313';
-
+// redux imports below.
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {sendDataToAction} from './actions/index';
+import {sendUserData} from './actions/index';
 
 class App extends Component {
 	constructor(props){
@@ -84,7 +84,7 @@ class App extends Component {
 		this.setState({
 			user: this.state.user
 		}, () => {
-			this.props.sendDataToAction(this.state.user);
+			this.props.sendUserData(this.state.user);
 			this.state.userList.push(this.state.user);
 			this.setState({
 				userList: this.state.userList
@@ -130,7 +130,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-	return bindActionCreators ({sendDataToAction: sendDataToAction}, dispatch);
+	return bindActionCreators ({sendUserData: sendUserData}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App); // export is keyword
